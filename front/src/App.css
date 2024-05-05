@@ -1,0 +1,251 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+header{
+  background-color: red;
+  padding: 16px 0;
+}
+header img{
+    border-radius: 50%;
+    border: 1px solid black;
+}
+header h1{
+  font-size: 30px;
+  font-weight: 100;
+  font-style: italic;
+  display: inline-block;
+  position: relative;
+  bottom: 35px;
+  margin-left: 10px;
+}
+nav {
+  background-color: rgb(133, 126, 126);
+  margin-bottom: 20px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+ flex-grow: 1;
+}
+nav ul li a{
+ color:white;
+ text-decoration: none;
+ padding: 3px 6px;
+ font-display: block;
+ text-align: center;
+}
+nav ul li a:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+
+}
+footer{
+  background-color: red;
+  clear: both;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 20px;
+}
+nav ul li a.activo{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.holder{
+  max-width: 960px;
+  margin: 0 auto;
+}
+h2{
+  color: red;
+  font-weight: 400;
+}
+/*inicio home*/
+
+.homeimg{
+  width:"400px";
+  align-items: center;    
+}
+.bienvenidos{
+  width: 60%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.bienvenidos p{
+  font-size: 20px;
+}
+
+.testimonios{
+  width: 40%;
+}
+.columnas{
+  display: flex;
+  justify-content: space-between;
+}
+.testimonio{
+  background-color: rgb(235, 230, 230);
+  padding: 16px;
+}
+.testimonio .cita{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 22px;
+  display: block;
+}
+.testimonio .autor{
+  font-size: 10px;
+  text-align: center;
+  display: block;
+  margin: 12px 0;
+}
+
+
+/*inicio nosotros*/
+.descripcion h2{
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  font-style:normal;
+
+}
+
+.personas{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.persona{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 18%;
+  text-align: center;
+  padding: 13px;
+  box-sizing: border-box;
+}
+.persona img{
+  border-radius: 50%;
+  max-width: 60%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.persona h5,
+.persona h6{
+  margin: 0;
+  font-weight: normal;
+  color: black;
+}
+.persona h5{
+  font-size: 14px;
+  margin-top: 5px;
+}
+.persona h6{
+  font-size: 11px;
+  font-style: italic;
+}
+/*inicio Oferta Academica*/
+.diseñoimg{
+  width:"400px";
+  align-items: center;
+  border: 1px solid black;   
+}
+/*inicio Prácticas*/
+.staff{
+  display: flex;
+   
+  
+}
+
+
+.practica{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  border: 1px solid #ccc;
+  width: auto;
+
+
+ 
+}
+.practicas{
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  
+}
+.practicadetalle{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.pdetalle{
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 13px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.pdetalle h5{
+  margin: 0;
+  font-weight: normal;
+  color: #01060c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+/*inicio Contacto*/
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacto,
+.otros-medios {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.contacto h2,
+.otros-medios h2 {
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color:red;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+button:hover {
+  background-color: rgb(243, 145, 145); 
+}
+
+button:focus {
+  outline: none; 
+}
