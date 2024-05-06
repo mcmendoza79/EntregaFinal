@@ -29,11 +29,14 @@ const Contactopage = (props) => {
       const response = await axios.post("http://localhost:3000/api/contacto", formData);
       setMsg(response.data.message);
       if (response.data.error === false) {
+        setMsg(response.data.message);
         setFormData(initialForm);
+        
       }
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
       setMsg('Ocurrió un error al enviar el formulario');
+      setFormData(initialForm);
     } finally {
       setSending(false); 
     }
