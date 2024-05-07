@@ -1,0 +1,37 @@
+<div class="conteiner" style="margin:100px auto">
+    <div class="row">
+    <div class="col-6 offset-3">
+        <h3>Modificar la novedad {{novedad.id}}</h3>
+        <form action="/admin/novedades/modificar" method="post">
+         <input type="hidden" value="{{novedad.id}}" name="id">
+         <div class="form-group">
+             <h4>Titulo</h4>
+            <input type="text" placeholder="titulo" name="titulo" value="{{novedad.titulo}}" class="form-control">
+         </div>
+         <div class="form-group">
+               <h4>Subtitulo</h4>
+             <textarea type="text"  placeholder="Subtitulo" class="form-control" name="subtitulo">
+                {{novedad.subtitulo}}
+             </textarea>   
+          </div>
+        <div class="form-group">
+             <h4>Contenido</h4>
+             <textarea type="text"  placeholder="Cuerpo" class="form-control" name="contenido">
+                {{novedad.contenido}}
+             </textarea>   
+          </div>
+        <div class="form-group">
+            <p><label>Imagen:<input type="file" name="imagen" id="imagen"/></label></p>
+            <p><label>Imagen:<input type="checkbox" name="img_delete" id="img_delete" value="1">
+            Eliminar la imagen actual?</label>
+            <input type="hidden" name="img_original" id="img_original" value="{{novedades.img_id}}">
+            </p>
+            </div>
+          <button type="submit" class="btn btn-primary">Modificar</button>
+         </form>
+     </div> 
+  </div>
+ </div>
+{{#if error}}
+<h5>{{message}}</h5>
+{{/if }}
