@@ -5,17 +5,18 @@ import NovedadItem from "../components/novedades/novedadItem";
 
 
 const Novedadespage = (props) => {
-  const cargarNovedades = async () => {
-    setLoading(true);
-    const response = await axios.get("http://localhost:3000/api/novedades");
-    setNovedades(response.data);
-    setLoading(false);
-  };
 
   const [loading, setLoading] = useState(false);
   const [novedades, setNovedades] = useState([]);
 
   useEffect(() => {
+    const cargarNovedades = async () => {
+      setLoading(true);
+      const response = await axios.get("http://localhost:3000/api/novedades");
+      setNovedades(response.data);
+      setLoading(false);
+    };
+
     cargarNovedades();
   }, []);
 

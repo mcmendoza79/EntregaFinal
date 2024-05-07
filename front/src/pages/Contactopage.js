@@ -6,7 +6,7 @@ const Contactopage = (props) => {
   const initialForm = {
     nombre: "",
     email: "",
-    mensaje: "",
+    mensaje: ""
   };
 
   const [sending, setSending] = useState(false);
@@ -19,28 +19,20 @@ const Contactopage = (props) => {
       ...oldData,
       [name]: value
     }));
-  };
+  }
 
   const handleSubmit = async e => {
     e.preventDefault();
     setMsg("");
-    setSending(true); 
-    try {
+    setSending(true)
+    
       const response = await axios.post("http://localhost:3000/api/contacto", formData);
+      setSending(false);
       setMsg(response.data.message);
-      if (response.data.error === false) {
-        setMsg(response.data.message);
-        setFormData(initialForm);
-        
+      if (response.data.message === false){
+        setFormData(initialForm)}
       }
-    } catch (error) {
-      console.error('Error al enviar el formulario:', error);
-      setMsg('Ocurrió un error al enviar el formulario');
-      setFormData(initialForm);
-    } finally {
-      setSending(false); 
-    }
-  };
+   
 
   return (
     <main className="holder">
