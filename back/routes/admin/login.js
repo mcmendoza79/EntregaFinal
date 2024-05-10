@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
     layout: "admin/layout"
   });
 });
-
 secured= async(req, res, next)=> {
   try{
     console.log(req.session.id_usuario);

@@ -12,7 +12,7 @@ const Novedadespage = (props) => {
   useEffect(() => {
     const cargarNovedades = async () => {
       setLoading(true);
-      const response = await axios.get("http://localhost:3000/api/novedades");
+      const response = await axios.get("http://localhost:8080/api/novedades");
       setNovedades(response.data);
       setLoading(false);
     };
@@ -23,21 +23,19 @@ const Novedadespage = (props) => {
   return (
     <section className="holder">
       <h2>Novedades</h2>
-      {loading ? (
+      {
+      loading ? 
+      (
         <p>Cargando...</p>
       ) : (
-        novedades.map(item => (
-          <NovedadItem
-            key={item.id}
+        novedades.map(item => <NovedadItem key={item.id}
             titulo={item.titulo}
             subtitulo={item.subtitulo}
             imagen={item.img_id}
-            contenido={item.contenido}
-          />
-        ))
-      )}
+            contenido={item.contenido}/>)
+            )}
     </section>
   );
-};
+}
 
 export default Novedadespage;

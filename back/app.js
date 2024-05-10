@@ -8,7 +8,7 @@ var fileupload= require("express-fileupload")
 var cors= require("cors");
 require("dotenv").config();
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/admin/users');
+var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var novedadesRouter = require('./routes/admin/novedades');
 var contactoRouter = require('./routes/admin/contacto');
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(fileupload({useTempFiles: true, tempFileDir:"/tmp/"}));
+
 app.use("/api", cors(), apiRouter);
 
 app.use(session({
@@ -35,6 +35,14 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+
+
+  app.use(fileupload({
+    useTempFiles: true, 
+    tempFileDir:"/tmp/"
+  }));
+
 
   app.use('/', indexRouter);
   app.use('/users', usersRouter);
@@ -45,39 +53,4 @@ app.use(session({
 
 
 
-// ejercicio
-
- /*app.get('/', (req, res) => {
-  res.send('¡Hola mundo desde Express!');
-});
-
-app.get('/saludo', (req, res) => {
-  res.send('¡Hola! ¿Cómo estás?');
-});
-
-app.get('/despedida', (req, res) => {
-  res.send('¡Hasta luego!');
-});
-
-
-app.listen(port, () => {
-  console.log(`La aplicación está corriendo en http://localhost:${port}`);
-});
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-*/
 module.exports = app;

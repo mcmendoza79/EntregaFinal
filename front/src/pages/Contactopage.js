@@ -26,7 +26,7 @@ const Contactopage = (props) => {
     setMsg("");
     setSending(true)
     
-      const response = await axios.post("http://localhost:3000/api/contacto", formData);
+      const response = await axios.post("http://localhost:8080/api/contacto", formData);
       setSending(false);
       setMsg(response.data.message);
       if (response.data.message === false){
