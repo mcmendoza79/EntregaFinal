@@ -54,7 +54,7 @@ const Contactopage = (props) => {
             </div>
             {sending && <p>Enviando...</p>}
             {msg && <p>{msg}</p>}
-            <button type="submit" disabled={sending}>Enviar</button>
+            <button type="submit" disabled={sending}>Enviar Info</button>
           </form>
         </div>
       </div>

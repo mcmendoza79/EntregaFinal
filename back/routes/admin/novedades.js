@@ -71,13 +71,22 @@ router.get('/eliminar/:id', async (req, res, next) =>{
     var id= req.params.id;
     let novedad=await novedadesModel.getNovedadesById(id);
     if (novedad.img_id){
-      await(destroy(novedad.id));
+      await(destroy(novedad.img_id));
     }
       await novedadesModel.deleteNovedadById(id);
     res.redirect('/admin/novedades' )
     });
   
-  router.post("/modificar", async (req, res, next) => {
+router.get('/modificar/:id', async (req, res, next) =>{
+      let id= req.params.id;
+      let novedad=await novedadesModel.getNovedadesById(id);
+      res.render('admin/modificar',{
+        layout:"admin/layout",
+       novedad   
+    });
+  });
+
+router.post("/modificar", async (req, res, next) => {
       try {
           let img_id = req.body.img_original;
           let borrar_img_vieja = false;
@@ -94,7 +103,7 @@ router.get('/eliminar/:id', async (req, res, next) =>{
           }
   
           if (borrar_img_vieja && req.body.img_original) {
-              await destroy(req.body.img_original);
+              await (destroy(req.body.img_original));
           }
   
           var obj = {
